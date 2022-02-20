@@ -20,22 +20,22 @@ h2 {
 
 #scores {
   display: flex;
-  gap: 25px;
+  gap: 290px;
 
-  justify-content: space-evenly;
+  justify-content: center;
   margin-bottom: -80px;
 }
 
 #main-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   padding: 100px;
   gap: 20px;
 }
 
 button.choice {
-  flex: auto;
+  flex-shrink: 0;
   width: 200px;
   height: 175px;
 }
