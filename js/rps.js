@@ -1,14 +1,17 @@
 
-let num;
+    let num;
+    let playerScore = 0;
+    let computerScore = 0;    
 
       function computerPlay() {
         const options = ["Rock", "Paper", "Scissors"];
         return options[Math.floor(Math.random() * options.length)];
       }
 
-    function playRound(playerSelection, computerSelection) {
-        playerSelection = playerSelection.toUpperCase();
-        computerSelection = computerSelection.toUpperCase();
+    function playRound(e, computerSelection) {
+        let playerSelection = e.target;
+        // playerSelection = playerSelection.toUpperCase();
+        // computerSelection = computerSelection.toUpperCase();
 
         if (playerSelection === "ROCK") {
           if (computerSelection === "ROCK") {
@@ -61,7 +64,7 @@ let num;
         alert("You tied the computer!");
       }
       else if (playerScore > computerScore){
-        alert("You beat to the computer!");
+        alert("You beat the computer!");
       } 
       else{
         alert("You lost to the computer!");
@@ -69,13 +72,12 @@ let num;
     }
 
 
-    const buttons = document.querySelectorAll(".choice");
+    const buttons = document.querySelectorAll("button.choice");
 
     buttons.forEach(button => {
         button.addEventListener("click", (e) => {
 
             console.log(e.target);
-
         });
     });
 

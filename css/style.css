@@ -8,7 +8,7 @@ html {
   box-sizing: inherit;
 }
 
-#buttons {
+#main-buttons {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -17,7 +17,15 @@ html {
 }
 
 button.choice {
-  width: 200px;
-  height: 200px;
   flex: auto;
+  width: 200px;
+  height: 175px;
+}
+
+img {
+  height: 150px;
+  width: 125px;
+}
+
+#rock {
 }
