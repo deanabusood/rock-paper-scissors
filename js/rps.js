@@ -15,10 +15,12 @@
         if (playerSelection === "ROCK") {
           if (computerSelection === "ROCK") {
             textField.textContent = "You Tie! You both chose Rock";
+            updateBorder(playerSelection, "TIE");
           }
           else if(computerSelection === "SCISSORS"){
             textField.textContent = "You Win! Rock beats Scissors";
             playerScoreboard.textContent = "Player score: "+(++playerScore);
+            updateBorder(playerSelection, "WIN");
           }
           else if(computerSelection === "PAPER"){
             textField.textContent = "You Lose! Paper beats Rock";
@@ -28,10 +30,12 @@
         else if (playerSelection === "PAPER") {
           if (computerSelection === "PAPER") {
             textField.textContent = "You Tie! You both chose Paper";
+            updateBorder(playerSelection, "TIE");
           }
           else if(computerSelection === "ROCK"){
             textField.textContent = "You Win! Paper beats Rock";
             playerScoreboard.textContent = "Player score: "+(++playerScore);
+            updateBorder(playerSelection, "WIN");
           }
           else if(computerSelection === "SCISSORS"){
             textField.textContent = "You Lose! Scissors beats Paper";
@@ -41,10 +45,12 @@
         else if (playerSelection === "SCISSORS") {
           if (computerSelection === "SCISSORS") {
             textField.textContent = "You Tie! You both chose Scissors";
+            updateBorder(playerSelection, "TIE")
           }
           else if(computerSelection === "PAPER"){
             textField.textContent = "You Win! Scissors beats Paper";
             playerScoreboard.textContent = "Player score: "+(++playerScore);
+            updateBorder(playerSelection, "WIN");
           }
           else if(computerSelection === "ROCK"){
             textField.textContent = "You Lose! Rock beats Scissors";
@@ -57,12 +63,36 @@
     function determineWinner(){
       if(playerScore === SCORE_TO_WIN){
         alert("You beat the computer!");
-        //reset score if user chooses to replay
+        resetGame(); 
       }
       else if(computerScore === SCORE_TO_WIN){
         alert("The computer beat you!");
+        resetGame();
       }
     }
+
+    function resetGame(){
+      playerScore = 0;
+      computerScore = 0;
+      playerScoreboard.textContent = "Player score: "+(playerScore);
+      computerScoreboard.textContent = "Computer score: "+ (computerScore);
+    }
+
+    function updateBorder(playerSelection, result){
+        if(option === "WIN"){
+          playerSelection.classList.toggle("win");
+        }
+        else if(option === "LOSE"){
+          playerSelection.classList.toggle("lose")
+        }
+        else{
+          playerSelection.classList.toggle("tie")
+        }
+    }
+
+    const rock = document.querySelector("#rock");
+    const paper = document.querySelector("#paper");
+    const scissors = document.querySelector("#scissors");
 
 
     const buttons = document.querySelectorAll("button.choice");
@@ -74,7 +104,7 @@
         });
     });
 
-    const textField = document.createElement("h3");
+    const textField = document.createElement("h2");
     textField.textContent = "Make your selection!";
     textField.setAttribute("style", "text-align: center; margin-top: -25px");
 
