@@ -15,12 +15,10 @@
         if (playerSelection === "ROCK") {
           if (computerSelection === "ROCK") {
             textField.textContent = "You Tie! You both chose Rock";
-            updateBorder(playerSelection, "TIE");
           }
           else if(computerSelection === "SCISSORS"){
             textField.textContent = "You Win! Rock beats Scissors";
-            playerScoreboard.textContent = "Player score: "+(++playerScore);
-            updateBorder(playerSelection, "WIN");
+            playerScoreboard.textContent = "Player score: "+ (++playerScore);
           }
           else if(computerSelection === "PAPER"){
             textField.textContent = "You Lose! Paper beats Rock";
@@ -30,12 +28,10 @@
         else if (playerSelection === "PAPER") {
           if (computerSelection === "PAPER") {
             textField.textContent = "You Tie! You both chose Paper";
-            updateBorder(playerSelection, "TIE");
           }
           else if(computerSelection === "ROCK"){
             textField.textContent = "You Win! Paper beats Rock";
-            playerScoreboard.textContent = "Player score: "+(++playerScore);
-            updateBorder(playerSelection, "WIN");
+            playerScoreboard.textContent = "Player score: "+ (++playerScore);
           }
           else if(computerSelection === "SCISSORS"){
             textField.textContent = "You Lose! Scissors beats Paper";
@@ -45,12 +41,10 @@
         else if (playerSelection === "SCISSORS") {
           if (computerSelection === "SCISSORS") {
             textField.textContent = "You Tie! You both chose Scissors";
-            updateBorder(playerSelection, "TIE")
           }
           else if(computerSelection === "PAPER"){
             textField.textContent = "You Win! Scissors beats Paper";
-            playerScoreboard.textContent = "Player score: "+(++playerScore);
-            updateBorder(playerSelection, "WIN");
+            playerScoreboard.textContent = "Player score: "+ (++playerScore);
           }
           else if(computerSelection === "ROCK"){
             textField.textContent = "You Lose! Rock beats Scissors";
@@ -76,36 +70,25 @@
       computerScore = 0;
       playerScoreboard.textContent = "Player score: "+(playerScore);
       computerScoreboard.textContent = "Computer score: "+ (computerScore);
+      textField.textContent = "Make your choice!"
     }
 
-    function updateBorder(playerSelection, result){
-        if(option === "WIN"){
-          playerSelection.classList.toggle("win");
-        }
-        else if(option === "LOSE"){
-          playerSelection.classList.toggle("lose")
-        }
-        else{
-          playerSelection.classList.toggle("tie")
-        }
-    }
-
+    // keep track of 3 main buttons UNUSED
     const rock = document.querySelector("#rock");
     const paper = document.querySelector("#paper");
     const scissors = document.querySelector("#scissors");
 
-
+    // add event listener to each button
     const buttons = document.querySelectorAll("button.choice");
-
     buttons.forEach(button => {
         button.addEventListener("click", (e) => {
 
             playRound(button.id, computerPlay());
         });
     });
-
+    // control scoreboard and text result
     const textField = document.createElement("h2");
-    textField.textContent = "Make your selection!";
+    textField.textContent = "Make your choice!";
     textField.setAttribute("style", "text-align: center; margin-top: -25px");
 
     const mainDiv = document.querySelector("div");
@@ -117,7 +100,5 @@
 
     playerScoreboard.textContent = "Player score: "+(playerScore);
     computerScoreboard.textContent = "Computer score: "+(computerScore);
-
-
     scoreBoard.appendChild(playerScoreboard);
     scoreBoard.appendChild(computerScoreboard);

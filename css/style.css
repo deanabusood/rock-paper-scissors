@@ -16,7 +16,7 @@ h1,
 h2 {
   text-align: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  margin-bottom: 25px;
+  margin-bottom: 100px;
 }
 
 h2 {
@@ -28,7 +28,7 @@ h2 {
   gap: 290px;
 
   justify-content: center;
-  margin-bottom: -80px;
+  margin-bottom: -70px;
 }
 
 #main-buttons {
@@ -50,10 +50,12 @@ img {
   width: 125px;
 }
 
-.win {
-  border-color: green;
+/* .win {
+  color: red;
+  border: red;
+  border-radius: 100px;
 }
 .lose {
 }
 .tie {
-}
+} */
