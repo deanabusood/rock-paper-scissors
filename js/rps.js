@@ -1,3 +1,4 @@
+
 let num;
 
       function computerPlay() {
@@ -66,6 +67,18 @@ let num;
         alert("You lost to the computer!");
       }
     }
+
+
+    const buttons = document.querySelectorAll(".choice");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", (e) => {
+
+            console.log(e.target);
+
+        });
+    });
+
 
     // function game(){
     //   let playerScore = 0;

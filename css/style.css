@@ -1,0 +1,23 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+#buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 100px;
+  gap: 20px;
+}
+
+button.choice {
+  width: 200px;
+  height: 200px;
+  flex: auto;
+}
